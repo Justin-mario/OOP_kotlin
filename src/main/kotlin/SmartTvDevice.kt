@@ -20,14 +20,24 @@ class SmartTvDevice( deviceName: String, deviceCategory: String):
         }
     } */
 
-    fun increaseVolume(){
+    fun increaseVolume() {
         speakerVolume++
         println("speaker volume increased to $speakerVolume")
+    }
+
+    fun decreaseVolume() {
+        speakerVolume--
+        println("speaker volume decreased to $speakerVolume")
     }
 
     fun nextChannel(){
         channelNumber++
         println("channel number increased to $channelNumber")
+    }
+
+    fun previousChannel(){
+        channelNumber--
+        println("channel number decreased to $channelNumber")
     }
 
     override fun turnOn() {
@@ -41,5 +51,9 @@ class SmartTvDevice( deviceName: String, deviceCategory: String):
     override fun turnOff() {
         super.turnOff()
         println("$name turned off")
+    }
+
+    override fun printDeviceInfo(){
+        super.printDeviceInfo()
     }
 }

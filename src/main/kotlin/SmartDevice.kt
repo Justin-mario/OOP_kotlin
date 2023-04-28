@@ -2,7 +2,7 @@ import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 open class SmartDevice protected constructor(val name: String, val category: String) {
-     private var deviceStatus = "online"
+    var deviceStatus = "online"
 
     open val deviceType = "unknown"
 
@@ -23,7 +23,9 @@ open class SmartDevice protected constructor(val name: String, val category: Str
         deviceStatus = "off"
     }
 
-
+    open fun printDeviceInfo(){
+        println("Device name: $name\n category: $category\n type: $deviceType")
+    }
 
 
 }

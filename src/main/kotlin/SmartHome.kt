@@ -5,6 +5,7 @@ class SmartHome(
     var deviceTurnOnCount = 0
         private set
 
+
     fun turnOnTv(){
         deviceTurnOnCount++
         smartTvDevice.turnOn()
@@ -17,11 +18,16 @@ class SmartHome(
     }
 
     fun increaseTvVolume(){
-        smartTvDevice.increaseVolume()
+        if (smartTvDevice.deviceStatus == "on"){
+            smartTvDevice.increaseVolume()
+        }
+
     }
 
     fun changeTvChannelToNext(){
-        smartTvDevice.nextChannel()
+        if (smartTvDevice.deviceStatus == "on") {
+            smartTvDevice.nextChannel()
+        }
     }
 
     fun turnOnLight(){
@@ -35,11 +41,34 @@ class SmartHome(
     }
 
     fun increaseLightBrightness(){
-        smartLightDevice.increaseBrightness()
+        if (smartLightDevice.deviceStatus == "on") {
+            smartLightDevice.increaseBrightness()
+        }
     }
 
     fun turnOffAllDevice(){
         turnOffLight()
         turnOffTv()
     }
+
+    fun printSmartTvInfo(){
+        smartTvDevice.printDeviceInfo()
+    }
+
+    fun printSmartLightInfo(){
+        smartLightDevice.printDeviceInfo()
+    }
+
+    fun decreaseTvVolume(){
+        smartTvDevice.decreaseVolume()
+    }
+
+    fun changeTvChannelToPrevious(){
+        smartTvDevice.previousChannel()
+    }
+
+    fun decreaseLightBrightness(){
+        smartLightDevice.decreaseBrightness()
+    }
+
 }

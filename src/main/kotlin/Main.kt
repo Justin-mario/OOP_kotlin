@@ -12,7 +12,16 @@ fun main() {
     smartHome.increaseTvVolume()
     smartHome.changeTvChannelToNext()
     smartHome.increaseLightBrightness()
+    smartHome.printSmartTvInfo()
+    smartHome.printSmartLightInfo()
     println()
+
+    smartHome.decreaseTvVolume()
+    smartHome.changeTvChannelToPrevious()
+    smartHome.decreaseLightBrightness()
+    println()
+
+
 
     smartHome.turnOffAllDevice()
     println("Total number of devices currently turned on: ${smartHome.deviceTurnOnCount}.")
